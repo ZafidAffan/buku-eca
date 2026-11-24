@@ -1,0 +1,14 @@
+{
+  "name": "ebook-interaktif",
+  "version": "1.0.0",
+  "private": true,
+  "description": "E-Book Interaktif dengan Efek Animasi Kertas 3D",
+  "scripts": {
+    "dev": "vite --open",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^5.4.11"
+  }
+}

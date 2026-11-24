@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kumpulan Bacaan Tidur Eca</title>
+    <!-- Font Serif Elegan untuk Tampilan Buku Fisik Nyata -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Animasi Kelopak Bunga Berjatuhan di Background Meja Kayu -->
+    <div id="petals-container" class="petals-container"></div>
+
+    <!-- Header / Navbar Minimalis -->
+    <header class="app-header">
+        <div class="brand">
+            <span class="brand-icon">
+                <svg class="app-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                </svg>
+            </span>
+            <span class="brand-title">KUMPULAN BACAAN TIDUR ECA</span>
+        </div>
+        <div class="header-actions">
+            <button id="toc-btn" class="header-btn" title="Daftar Isi">
+                <svg class="app-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="8" y1="6" x2="21" y2="6"></line>
+                    <line x1="8" y1="12" x2="21" y2="12"></line>
+                    <line x1="8" y1="18" x2="21" y2="18"></line>
+                    <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                    <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                    <line x1="3" y1="18" x2="3.01" y2="18"></line>
+                </svg>
+                <span>Daftar Isi</span>
+            </button>
+            <button id="fullscreen-btn" class="header-btn" title="Layar Penuh">
+                <span class="fs-icon-wrap">
+                    <svg class="app-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3">
+                        </path>
+                    </svg>
+                </span>
+                <span class="fs-text">Fullscreen</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Area Buku Utama -->
+    <main class="flipbook-viewport">
+        <!-- Tombol Panah Geser Kiri -->
+        <button id="prev-page-btn" class="nav-arrow nav-prev" aria-label="Halaman Sebelumnya">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                stroke-linejoin="round">
+                <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+        </button>
+
+        <!-- Container Flipbook -->
+        <div class="book-container">
+            <div id="flipbook" class="flipbook">
+
+                <!-- 0. COVER DEPAN (HARDCOVER) -->
+                <div class="page page-cover page-cover-front" data-density="hard">
+                    <div class="page-content cover-design">
+                        <div class="cover-border">
+                            <span class="cover-kicker">Berdasarkan Perasaan Sesungguhnya</span>
+                            <h1 class="cover-title">Kumpulan Bacaan Tidur Eca</h1>
+                            <div class="cover-divider">✦ ✦ ✦</div>
+                            <p class="cover-subtitle">Sebuah Perjalanan Belajar Menulis dengan Baik dan Benar Sesuai
+                                Perasaan Saya ke Eca</p>
+                            <div class="cover-author">Oleh : Zafid</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 1. KATA PENGANTAR (KIRI) -->
+                <div class="page page-left" data-density="soft">
+                    <div class="page-content inner-intro">
+                        <div class="book-header">
+                            <span class="header-author">KATA PENGANTAR</span>
+                            <span class="header-number">1</span>
+                        </div>
+                        <div class="page-body quote-body">
+                            <blockquote class="intro-quote">
+                                Hai Eca, buku ini berbahaya karena bakal menyebabkan kecanduan akut, kalimat nya yang
+                                singkat dan tidak terstruktur, selain merusak kesehatan bahasa indonesia, juga kerap
+                                berlompatan, berletupan bagai petasan cabe rawit, mudah menyengat dan mudah meninggalkan
+                                kasih sayang.
+                            </blockquote>
+                            <p class="quote-caption">— Zafid, 2026</p>
+                        </div>
+                        <div class="page-footer">
+                            <span class="footer-center">• 1 •</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. DAFTAR ISI (KANAN) -->
+                <div class="page page-right" data-density="soft">
+                    <div class="page-content">
+                        <div class="book-header">
+                            <span class="header-number">2</span>
+                            <span class="header-title">KUMPULAN BACAAN TIDUR ECA</span>
+                        </div>
+                        <div class="page-body">
+                            <h2 class="chapter-heading text-center">DAFTAR ISI</h2>
+                            <div class="toc-list">
+                                <div class="toc-item" onclick="jumpTo(1)">
+                                    <span class="toc-title">Kata Pengantar</span>
+                                    <span class="toc-dots"></span>
+                                    <span class="toc-page">1</span>
+                                </div>
+                                <div class="toc-item" onclick="jumpTo(3)">
+                                    <span class="toc-title">Di Sebuah Jalanan Sempit, di Jogja</span>
+                                    <span class="toc-dots"></span>
+                                    <span class="toc-page">3</span>
+                                </div>
+                                <div class="toc-item" onclick="jumpTo(5)">
+                                    <span class="toc-title">Apakah Ada yang Lebih Menenggelamkan?</span>
+                                    <span class="toc-dots"></span>
+                                    <span class="toc-page">5</span>
+                                </div>
+                                <div class="toc-item" onclick="jumpTo(7)">
+                                    <span class="toc-title">Cantikmu Terlampau Luas...</span>
+                                    <span class="toc-dots"></span>
+                                    <span class="toc-page">7</span>
+                                </div>
+                                <div class="toc-item" onclick="jumpTo(8)">
+                                    <span class="toc-title">Diam, Kamu Sedang Cantik-Cantiknya</span>
+                                    <span class="toc-dots"></span>
+                                    <span class="toc-page">8</span>
+                                </div>
+                                <div class="toc-item" onclick="jumpTo(10)">
+                                    <span class="toc-title">Jangan Disimpan Terlalu Lama...</span>
+                                    <span class="toc-dots"></span>
+                                    <span class="toc-page">10</span>
+                                </div>
+                                <div class="toc-item" onclick="jumpTo(11)">
+                                    <span class="toc-title">Lautan yang Tak Bertepi</span>
+                                    <span class="toc-dots"></span>
+                                    <span class="toc-page">11</span>
+                                </div>
+                                <div class="toc-item" onclick="jumpTo(12)">
+                                    <span class="toc-title">Hidup Aku Terlalu Banyak Kamu</span>
+                                    <span class="toc-dots"></span>
+                                    <span class="toc-page">12</span>
+                                </div>
+                                <div class="toc-item" onclick="jumpTo(14)">
+                                    <span class="toc-title">Catatan Akhir</span>
+                                    <span class="toc-dots"></span>
+                                    <span class="toc-page">14</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="page-footer">
+                            <span class="footer-center">• 2 •</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. DI SEBUAH JALANAN SEMPIT, DI JOGJA (KIRI) -->
+                <div class="page page-left" data-density="soft">
+                    <div class="page-content">
+                        <div class="book-header">
+                            <span class="header-author">KUMPULAN BACAAN TIDUR ECA</span>
+                            <span class="header-number">3</span>
+                        </div>
+                        <div class="page-body">
+                            <h3 class="section-title">Di sebuah jalanan sempit, di jogja</h3>
+                            <p class="dropcap-para">
+                                Aku masih di sini, di kota yang sama, di sudut jalan selokan mataram yang udaranya
+                                selalu menusuk pelan, aspalnya masih sama, namun retaknya kian melebar setiap kali hujan
+                                turun,
+                            </p>
+                            <p>
+                                genangannya memantul tepat di bawah langkah sepatuku.
+                                Ia mengendap, seperti bayanganmu, yang tak kunjung kering meski matahari terbit
+                                berkali-kali.
+                            </p>
+                        </div>
+                        <div class="page-footer">
+                            <span class="footer-center">• 3 •</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. DI SEBUAH JALANAN SEMPIT (LANJUTAN) (KANAN) -->
+                <div class="page page-right" data-density="soft">
+                    <div class="page-content">
+                        <div class="book-header">
+                            <span class="header-number">4</span>
+                            <span class="header-title">KUMPULAN BACAAN TIDUR ECA</span>
+                        </div>
+                        <div class="page-body">
+                            <p>
+                                aku mengenalmu ketika jemariku sibuk mengeja bahasa pemrograman, tak terencana.
+                                Seperti hujan yang tiba tiba datang di bulan juni,
+                                Tidak langsung deras, tapi menetes pelan pelan,
+                            </p>
+                            <p>
+                                Begitupun kita...
+                            </p>
+                            <p>
+                                bagiku, pertemuan kita adalah ketidaksengajaan yang semegah megahnya.
+                                dan aku masih disini, di lautan kenangan yang masih kucari sampai mana ujungnya.
+                            </p>
+                            <div class="book-stars">* * *</div>
+                        </div>
+                        <div class="page-footer">
+                            <span class="footer-center">• 4 •</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. APAKAH ADA YANG LEBIH MENENGGELAMKAN... (KIRI) -->
+                <div class="page page-left" data-density="soft">
+                    <div class="page-content">
+                        <div class="book-header">
+                            <span class="header-author">KUMPULAN BACAAN TIDUR ECA</span>
+                            <span class="header-number">5</span>
+                        </div>
+                        <div class="page-body">
+                            <h2 class="chapter-main-title">Apakah ada yang lebih menenggelamkan dari lautan? ada,
+                                kenangan</h2>
+                            <p class="first-para">
+                                Dia manis sekali, bu.
+                            </p>
+                            <p>
+                                Di setiap kesempatan percakapan dengannya,
+                                Saya merasa tenggelam dan enggan di selamatkan,
+                                di sepanjang perjalanan pulang.
+                                Saya selalu bertanya pada tuhan, kebaikan macam apa yang pernah saya lakukan, sehingga
+                                tuhan meminjamkannya untuk saya.
+                            </p>
+                        </div>
+                        <div class="page-footer">
+                            <span class="footer-center">• 5 •</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. APAKAH ADA YANG LEBIH... (LANJUTAN) (KANAN) -->
+                <div class="page page-right" data-density="soft">
+                    <div class="page-content">
+                        <div class="book-header">
+                            <span class="header-number">6</span>
+                            <span class="header-title">KUMPULAN BACAAN TIDUR ECA</span>
+                        </div>
+                        <div class="page-body">
+                            <p>
+                                Dia manis sekali, bu.
+                                Saya tidak ingin berandai, tapi entah mengapa, setiap bersamanya saya selalu merasa
+                                ingin terus menaklukan hidup.
+                            </p>
+                            <p>
+                                beruntung sekali saya.
+                                Jika ini bagian dari cara tuhan mengasihani saya, maka sungguh, saya sangat
+                                mensyukurinya.
+                            </p>
+                            <div class="book-stars">* * *</div>
+                        </div>
+                        <div class="page-footer">
+                            <span class="footer-center">• 6 •</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 7. CANTIK MU TERLAMPAU LUAS... (KIRI) -->
+                <div class="page page-left" data-density="soft">
+                    <div class="page-content">
+                        <div class="book-header">
+                            <span class="header-author">KUMPULAN BACAAN TIDUR ECA</span>
+                            <span class="header-number">7</span>
+                        </div>
+                        <div class="page-body">
+                            <h2 class="chapter-main-title">Cantik mu terlampau luas untuk tulisan ku yang mengekang</h2>
+                            <p class="first-para">
+                                Kamu adalah semesta yang bergerak
+                                Sedangkan kata kata ku hanya sangkar kecil yang rapuh.
+                                Bagaimana bisa aku memenjarakanmu, jika matamu saja menyimpan samudra yang tak bertepi?
+                            </p>
+                            <p>
+                                Selalu kucoba meruncingkan pena, memeras seluruh isi kepala.
+                                Tapi huruf huruf ku terlalu terbatas untuk menuliskan keanggunanmu yang begitu luas.
+                                Tak ada kamus yang cukup tebal, tak ada puisi yang cukup menikam.
+                            </p>
+                        </div>
+                        <div class="page-footer">
+                            <span class="footer-center">• 7 •</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 8. DIAM, KAMU SEDANG CANTIK CANTIKNYA (KANAN) -->
+                <div class="page page-right" data-density="soft">
+                    <div class="page-content">
+                        <div class="book-header">
+                            <span class="header-number">8</span>
+                            <span class="header-title">KUMPULAN BACAAN TIDUR ECA</span>
+                        </div>
+                        <div class="page-body">
+                            <h2 class="chapter-main-title">Diam, Kamu sedang cantik cantiknya</h2>
+                            <p class="first-para">
+                                Jika di kehidupan ini aku daun kering dan kamu embun paginya,
+                            </p>
+                            <p>
+                                aku rela menahan diri agar tak gugur diterpa angin hanya untuk menampung beratmu sejenak sebelum jatuh bersama.
+                            </p>
+                            <p>
+                                kata kata ku terlalu mengekang untuk mendeskripsikan binar indah matamu.
+                            </p>
+                            <p>
+                                intinya... di kehidupan yang sekali ini, aku maunya kamu...
+                            </p>
+                        </div>
+                        <div class="page-footer">
+                            <span class="footer-center">• 8 •</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 9. DIAM (LANJUTAN) (KIRI) -->
+                <div class="page page-left" data-density="soft">
+                    <div class="page-content">
+                        <div class="book-header">
+                            <span class="header-author">KUMPULAN BACAAN TIDUR ECA</span>
+                            <span class="header-number">9</span>
+                        </div>
+                        <div class="page-body">
+                            <p class="first-para">
+                                Semoga kamu di jauhkan dari ancaman meteor, virus zombie, batu kecil di nasi, salah ruangan, indomie bumbu keras, dan segala bentuk ancaman global lainnya.
+                            </p>
+                            <div class="book-stars">* * *</div>
+                        </div>
+                        <div class="page-footer">
+                            <span class="footer-center">• 9 •</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 10. JANGAN DISIMPAN TERLALU LAMA... (KANAN) -->
+                <div class="page page-right" data-density="soft">
+                    <div class="page-content">
+                        <div class="book-header">
+                            <span class="header-number">10</span>
+                            <span class="header-title">KUMPULAN BACAAN TIDUR ECA</span>
+                        </div>
+                        <div class="page-body">
+                            <h2 class="chapter-main-title">Jangan Disimpan Terlalu Lama...</h2>
+                            <p class="first-para">
+                                Kemudian mau kamu apakan rindu ini?
+                            </p>
+                            <p>
+                                disimpan di balik kabut pagi? atau di balik lipatan roti coklat yang kamu panggan kemarin?
+                            </p>
+                            <p>
+                                atau
+                            </p>
+                            <p>
+                                dibalik biji alpukat kuning yang kamu banggakan?
+                            </p>
+                            <p>
+                                Ah... ayolah.. aku mau kamu.
+                            </p>
+                        </div>
+                        <div class="page-footer">
+                            <span class="footer-center">• 10 •</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 11. LAUTAN YANG TAK BERTEPI (KIRI) -->
+                <div class="page page-left" data-density="soft">
+                    <div class="page-content">
+                        <div class="book-header">
+                            <span class="header-author">KUMPULAN BACAAN TIDUR ECA</span>
+                            <span class="header-number">11</span>
+                        </div>
+                        <div class="page-body">
+                            <h2 class="chapter-main-title">Lautan yang tak bertepi</h2>
+                            <p class="first-para">
+                                Lalu akan kemana cerita ini berlabuh?
+                            </p>
+                            <p>
+                                Sepertinya perjalanannya jauh dan mencekam. Sementara aku? masih gelantungan di bulu matamu yang sehitam dendam, sedalam kenangan, sejauh pengertian.
+                            </p>
+                            <div class="book-stars">* * *</div>
+                        </div>
+                        <div class="page-footer">
+                            <span class="footer-center">• 11 •</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 12. HIDUP AKU TERLALU BANYAK KAMU (KANAN) -->
+                <div class="page page-right" data-density="soft">
+                    <div class="page-content">
+                        <div class="book-header">
+                            <span class="header-number">12</span>
+                            <span class="header-title">KUMPULAN BACAAN TIDUR ECA</span>
+                        </div>
+                        <div class="page-body">
+                            <h2 class="chapter-main-title">Hidup aku terlalu banyak kamu</h2>
+                            <p class="first-para">
+                                Aku yang gila atau kamu yang terlahir dari cahaya?
+                            </p>
+                            <p>
+                                Dijalan pulang baru aku sadari, saling berjanji tapi aturan dilanggar.
+                            </p>
+                        </div>
+                        <div class="page-footer">
+                            <span class="footer-center">• 12 •</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 13. HIDUP AKU (LANJUTAN) (KIRI) -->
+                <div class="page page-left" data-density="soft">
+                    <div class="page-content">
+                        <div class="book-header">
+                            <span class="header-author">KUMPULAN BACAAN TIDUR ECA</span>
+                            <span class="header-number">13</span>
+                        </div>
+                        <div class="page-body">
+                            <p class="first-para">
+                                Sayangnya cinta ini ga di kelola pln, jadi ga mudah padam.
+                                Sayangnya cinta ini stabil, tidak seperti nilai tukar rupiah terhadap dolar.
+                            </p>
+                            <p>
+                                Ahhh tak apa...
+                            </p>
+                            <p>
+                                Selalu repot memang kalo soal perasaan.
+                            </p>
+                            <div class="book-stars">* * *</div>
+                        </div>
+                        <div class="page-footer">
+                            <span class="footer-center">• 13 •</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 14. CATATAN AKHIR (KANAN) -->
+                <div class="page page-right" data-density="soft">
+                    <div class="page-content">
+                        <div class="book-header">
+                            <span class="header-number">14</span>
+                            <span class="header-title">KUMPULAN BACAAN TIDUR ECA</span>
+                        </div>
+                        <div class="page-body">
+                            <h2 class="chapter-main-title text-center">Catatan Akhir</h2>
+                            <p class="dropcap-para">
+                                Tidur yang nyenyak, Ca. Semoga malam-malammu selalu ditemani mimpi baik dan hati yang tenang.
+                            </p>
+                            <div class="book-stars">* * *</div>
+                            <p class="text-center italic">
+                                Kalau suatu saat kamu merasa lelah dengan dunia yang bising ini, ingatlah bahwa ada kata-kata di buku ini yang selalu ada untuk kamu baca kembali.
+                            </p>
+                            <div class="book-end-ornament">❦</div>
+                        </div>
+                        <div class="page-footer">
+                            <span class="footer-center">• 14 •</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 15. COVER BELAKANG (HARDCOVER) -->
+                <div class="page page-cover page-cover-back" data-density="hard">
+                    <div class="page-content back-cover-design">
+                        <div class="back-cover-inner">
+                            <div class="back-quote">
+                                “Buku adalah jendela keabadian, tempat kata-kata beristirahat dan jiwa menemukan ketenangan.”
+                            </div>
+                            <div class="back-meta">
+                                <p><strong>KUMPULAN BACAAN TIDUR ECA</strong></p>
+                                <p>Edisi Spesial Interaktif • Ditulis dengan Penuh Kasih</p>
+                                <div class="barcode">
+                                    <div class="barcode-lines"></div>
+                                    <span>UNTUK ECA • DARI ZAFID</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Tombol Panah Geser Kanan -->
+        <button id="next-page-btn" class="nav-arrow nav-next" aria-label="Halaman Berikutnya">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+        </button>
+    </main>
+
+    <!-- Bottom Player / Navigation Bar (FlipHTML5 Style) -->
+    <footer class="bottom-bar">
+        <!-- Indikator Halaman -->
+        <div class="page-indicator">
+            <span id="page-current">Cover</span>
+            <span class="separator">/</span>
+            <span id="page-total">16</span>
+        </div>
+
+        <!-- Slider Scrub / Progress Halaman -->
+        <div class="slider-wrapper">
+            <input type="range" id="page-slider" min="0" max="15" value="0" step="1" aria-label="Navigasi Halaman">
+        </div>
+
+        <!-- Toolbar Kontrol Tambahan Menggunakan Styled Vector Icons -->
+        <div class="control-tools">
+            <!-- Halaman Pertama -->
+            <button id="btn-first" class="tool-btn" title="Halaman Pertama">
+                <svg class="app-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="19 20 9 12 19 4 19 20"></polygon>
+                    <line x1="5" y1="19" x2="5" y2="5"></line>
+                </svg>
+            </button>
+
+            <!-- Sebelumnya -->
+            <button id="btn-prev" class="tool-btn" title="Sebelumnya">
+                <svg class="app-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+            </button>
+
+            <!-- Putar Otomatis / Pause -->
+            <button id="btn-play" class="tool-btn" title="Putar Otomatis">
+                <svg class="app-icon icon-play" viewBox="0 0 24 24" fill="currentColor">
+                    <polygon points="6 4 20 12 6 20 6 4"></polygon>
+                </svg>
+            </button>
+
+            <!-- Berikutnya -->
+            <button id="btn-next" class="tool-btn" title="Berikutnya">
+                <svg class="app-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </button>
+
+            <!-- Halaman Terakhir -->
+            <button id="btn-last" class="tool-btn" title="Halaman Terakhir">
+                <svg class="app-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="5 4 15 12 5 20 5 4"></polygon>
+                    <line x1="19" y1="5" x2="19" y2="19"></line>
+                </svg>
+            </button>
+
+            <span class="tool-separator"></span>
+
+            <!-- Efek Suara Kertas -->
+            <button id="btn-sound" class="tool-btn active" title="Efek Suara Kertas (Aktif)">
+                <svg class="app-icon icon-volume" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                    <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                    <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+                </svg>
+            </button>
+
+            <!-- Background Music (BGM) -->
+            <button id="btn-music" class="tool-btn" title="Musik Latar (Play / Pause)">
+                <svg class="app-icon icon-music" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 18V5l12-2v13"></path>
+                    <circle cx="6" cy="18" r="3"></circle>
+                    <circle cx="18" cy="16" r="3"></circle>
+                </svg>
+            </button>
+
+            <!-- Zoom / Perbesar -->
+            <button id="btn-zoom" class="tool-btn" title="Perbesar Tampilan">
+                <svg class="app-icon icon-zoom" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    <line x1="11" y1="8" x2="11" y2="14"></line>
+                    <line x1="8" y1="11" x2="14" y2="11"></line>
+                </svg>
+            </button>
+        </div>
+    </footer>
+
+    <!-- Modal Daftar Isi / Quick Jump -->
+    <div id="toc-modal" class="modal-overlay">
+        <div class="modal-card">
+            <div class="modal-header">
+                <div class="modal-title-group">
+                    <svg class="app-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="8" y1="6" x2="21" y2="6"></line>
+                        <line x1="8" y1="12" x2="21" y2="12"></line>
+                        <line x1="8" y1="18" x2="21" y2="18"></line>
+                        <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                        <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                        <line x1="3" y1="18" x2="3.01" y2="18"></line>
+                    </svg>
+                    <h3>Daftar Isi Buku</h3>
+                </div>
+                <button id="close-toc-btn" class="close-btn" title="Tutup Modal">
+                    <svg class="app-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <ul class="toc-jump-list">
+                    <li onclick="jumpTo(0)"><span>Cover Depan</span> <span class="badge">Sampul</span></li>
+                    <li onclick="jumpTo(1)"><span>Kata Pengantar &amp; Daftar Isi</span> <span class="badge">Hal. 1-2</span></li>
+                    <li onclick="jumpTo(3)"><span>Di Sebuah Jalanan Sempit, di Jogja</span> <span class="badge">Hal. 3-4</span></li>
+                    <li onclick="jumpTo(5)"><span>Apakah Ada yang Lebih Menenggelamkan?</span> <span class="badge">Hal. 5-6</span></li>
+                    <li onclick="jumpTo(7)"><span>Cantikmu Terlampau Luas &amp; Diam</span> <span class="badge">Hal. 7-8</span></li>
+                    <li onclick="jumpTo(9)"><span>Diam (Lanjutan) &amp; Jangan Disimpan</span> <span class="badge">Hal. 9-10</span></li>
+                    <li onclick="jumpTo(11)"><span>Lautan yang Tak Bertepi &amp; Hidup Aku</span> <span class="badge">Hal. 11-12</span></li>
+                    <li onclick="jumpTo(13)"><span>Hidup Aku (Lanjutan) &amp; Catatan Akhir</span> <span class="badge">Hal. 13-14</span></li>
+                    <li onclick="jumpTo(15)"><span>Cover Belakang</span> <span class="badge">Penutup</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Audio Musik Latar (BGM) -->
+    <audio id="bgm-audio" src="/audio/backsound.mp3" loop preload="auto"></audio>
+
+    <!-- Script Library StPageFlip & Logika Kontrol -->
+    <script src="/js/page-flip.browser.js"></script>
+    <script type="module" src="/script.js"></script>
+</body>
+
+</html>

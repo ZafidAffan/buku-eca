@@ -1,0 +1,964 @@
+/* ==========================================================================
+   E-BOOK INTERAKTIF STYLESHEET
+   Matching FlipHTML5 aesthetic: Wood table background, floating sakura petals,
+   realistic book binding crease, dual-page layout, and modern bottom control bar.
+   ========================================================================== */
+
+:root {
+    --book-width: 460px;
+    --book-height: 640px;
+    --paper-color: #fbf9f4;
+    --paper-texture: #f5f1e8;
+    --text-primary: #252422;
+    --text-secondary: #63615b;
+    --accent-gold: #c29d59;
+    --accent-red: #8b2635;
+    --shadow-book: 0 15px 35px rgba(0, 0, 0, 0.28), 0 5px 15px rgba(0, 0, 0, 0.15);
+    --font-serif: 'Lora', 'Georgia', serif;
+    --font-heading: 'Playfair Display', serif;
+    --font-cover: 'Cinzel', serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: var(--font-serif);
+    color: var(--text-primary);
+    user-select: none;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* --------------------------------------------------------------------------
+   Background Meja Kayu Hangat (Warm Wood Planks Tabletop)
+   -------------------------------------------------------------------------- */
+body {
+    background-color: #d8c2a7;
+    background-image: 
+        radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.25) 0%, rgba(0, 0, 0, 0.25) 100%),
+        repeating-linear-gradient(
+            90deg,
+            #d6c1a8 0px,
+            #d6c1a8 70px,
+            #ceb79d 71px,
+            #ceb79d 140px,
+            #d9c5ad 141px,
+            #c8b196 210px,
+            #cdb69b 211px,
+            #dcc8b1 280px
+        );
+    background-blend-mode: multiply, normal;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+
+/* --------------------------------------------------------------------------
+   Icon Vector Styling (Feather/Lucide Style)
+   -------------------------------------------------------------------------- */
+.app-icon {
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+    vertical-align: middle;
+    flex-shrink: 0;
+    transition: transform 0.2s ease, stroke 0.2s ease, fill 0.2s ease;
+}
+
+/* --------------------------------------------------------------------------
+   Animasi Kelopak Bunga Berjatuhan (Sakura Petals)
+   -------------------------------------------------------------------------- */
+.petals-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.petal {
+    position: absolute;
+    background: linear-gradient(135deg, #ffccd5 0%, #ff9aa2 100%);
+    border-radius: 15px 0 15px 0;
+    opacity: 0.75;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+    animation: drift-and-spin linear infinite;
+}
+
+@keyframes drift-and-spin {
+    0% {
+        transform: translateY(-50px) translateX(0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.8;
+    }
+    90% {
+        opacity: 0.7;
+    }
+    100% {
+        transform: translateY(105vh) translateX(120px) rotate(480deg);
+        opacity: 0;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   Header / Minimal Bar Atas
+   -------------------------------------------------------------------------- */
+.app-header {
+    height: 54px;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.45);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    z-index: 10;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-cover);
+    font-size: 14px;
+    letter-spacing: 2px;
+    color: #3e3328;
+    font-weight: 700;
+}
+
+.brand-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.brand-icon .app-icon {
+    width: 22px;
+    height: 22px;
+    color: #7b6246;
+}
+
+.header-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.header-btn {
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    color: #443c33;
+    padding: 7px 16px;
+    border-radius: 20px;
+    font-family: var(--font-serif);
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.25s ease;
+}
+
+.header-btn .app-icon {
+    width: 16px;
+    height: 16px;
+    color: #5d4a36;
+}
+
+.header-btn:hover {
+    background: #ffffff;
+    border-color: #8c7355;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+    transform: translateY(-1px);
+}
+
+.header-btn:hover .app-icon {
+    transform: scale(1.08);
+}
+
+.fs-icon-wrap {
+    display: inline-flex;
+    align-items: center;
+}
+
+/* --------------------------------------------------------------------------
+   Main Viewport Buku
+   -------------------------------------------------------------------------- */
+.flipbook-viewport {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 5;
+    padding: 10px 40px;
+}
+
+/* Tombol Panah Navigasi Samping */
+.nav-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 72px;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #4a4035;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+    transition: all 0.25s ease;
+    z-index: 20;
+}
+
+.nav-arrow svg {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.2s ease;
+}
+
+.nav-prev {
+    left: 24px;
+}
+
+.nav-next {
+    right: 24px;
+}
+
+.nav-arrow:hover {
+    background: rgba(255, 255, 255, 0.95);
+    color: #1f1a14;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.nav-prev:hover svg {
+    transform: translateX(-3px);
+}
+
+.nav-next:hover svg {
+    transform: translateX(3px);
+}
+
+.nav-arrow:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
+   Flipbook Container & Pages
+   -------------------------------------------------------------------------- */
+.book-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.35));
+    transition: transform 0.3s ease;
+}
+
+.flipbook {
+    width: calc(var(--book-width) * 2);
+    height: var(--book-height);
+    margin: 0 auto;
+}
+
+/* Base Page Styling */
+.page {
+    background-color: var(--paper-color);
+    background-image: 
+        radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.6) 0%, rgba(240, 233, 220, 0.4) 100%);
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* Bayangan Lipatan Buku di Tengah (Spine Shadows) */
+.page-left {
+    box-shadow: inset -22px 0 24px -10px rgba(0, 0, 0, 0.18), inset 0 0 15px rgba(0, 0, 0, 0.04);
+}
+
+.page-right {
+    box-shadow: inset 22px 0 24px -10px rgba(0, 0, 0, 0.18), inset 0 0 15px rgba(0, 0, 0, 0.04);
+}
+
+.page-content {
+    width: 100%;
+    height: 100%;
+    padding: 38px 45px 32px 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+/* --------------------------------------------------------------------------
+   Book Typography & Layout (Matching User's Screenshot)
+   -------------------------------------------------------------------------- */
+.book-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2.2px;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    margin-bottom: 18px;
+}
+
+.header-author {
+    font-size: 10.5px;
+    letter-spacing: 2.5px;
+}
+
+.header-title {
+    font-size: 10.5px;
+    letter-spacing: 2px;
+}
+
+.header-number {
+    font-weight: 700;
+    font-size: 12px;
+    color: #4a453f;
+}
+
+.page-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    font-size: 14.5px;
+    line-height: 1.78;
+    text-align: justify;
+    color: #2b2926;
+    hyphens: auto;
+}
+
+.page-body p {
+    margin-bottom: 14px;
+    text-indent: 26px;
+}
+
+.page-body p.first-para,
+.page-body p.dropcap-para,
+.page-body p.letter-greeting {
+    text-indent: 0;
+}
+
+.dropcap-para::first-letter {
+    font-family: var(--font-heading);
+    font-size: 44px;
+    float: left;
+    line-height: 0.85;
+    padding-right: 8px;
+    padding-top: 4px;
+    color: #2e261f;
+    font-weight: bold;
+}
+
+.book-stars {
+    text-align: center;
+    letter-spacing: 6px;
+    margin: 12px 0 16px 0;
+    color: #8c8275;
+    font-size: 13px;
+}
+
+.page-footer {
+    padding-top: 10px;
+    text-align: center;
+    font-size: 11px;
+    color: #8c8275;
+}
+
+.footer-center {
+    letter-spacing: 3px;
+    font-size: 11px;
+}
+
+/* Bab & Judul */
+.chapter-badge {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #7d6b56;
+    margin-bottom: 4px;
+}
+
+.chapter-main-title {
+    font-family: var(--font-heading);
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #221d17;
+    line-height: 1.3;
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: #221d17;
+}
+
+/* Surat di Dalam Bab (Letter Format) */
+.letter-date {
+    font-style: italic;
+    color: #4e4840;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.letter-greeting {
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.letter-closing {
+    margin-top: 14px;
+    text-align: right;
+    font-style: italic;
+}
+
+.letter-sender {
+    font-weight: 600;
+    font-style: normal;
+    margin-top: 4px;
+}
+
+.highlight-box {
+    margin: 18px 0;
+    padding: 16px 20px;
+    background: rgba(220, 205, 185, 0.25);
+    border-left: 3px solid #ab9274;
+    font-style: italic;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.book-end-ornament {
+    text-align: center;
+    font-size: 26px;
+    color: #9c8a74;
+    margin-top: 18px;
+}
+
+/* --------------------------------------------------------------------------
+   Daftar Isi Halaman (TOC)
+   -------------------------------------------------------------------------- */
+.chapter-heading {
+    font-family: var(--font-heading);
+    font-size: 22px;
+    letter-spacing: 2px;
+    margin-bottom: 24px;
+    color: #2b251e;
+}
+
+.toc-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 10px;
+}
+
+.toc-item {
+    display: flex;
+    align-items: baseline;
+    cursor: pointer;
+    font-size: 13.5px;
+    color: #3b352e;
+    transition: color 0.2s ease;
+}
+
+.toc-item:hover {
+    color: #8b4513;
+}
+
+.toc-dots {
+    flex: 1;
+    border-bottom: 1px dotted #a69c8f;
+    margin: 0 8px;
+}
+
+.toc-page {
+    font-weight: 600;
+    font-size: 13px;
+}
+
+/* --------------------------------------------------------------------------
+   Hardcover Depan & Belakang
+   -------------------------------------------------------------------------- */
+.page-cover {
+    background: #1b263b !important;
+    color: #e0d0b8 !important;
+}
+
+.cover-design {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px !important;
+    background: linear-gradient(135deg, #1b263b 0%, #0d1b2a 100%);
+    border: 4px solid #142030;
+    box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.6);
+}
+
+.cover-border {
+    width: 100%;
+    height: 100%;
+    border: 2px solid #c29d59;
+    border-radius: 4px;
+    padding: 40px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+.cover-border::before {
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    right: 6px;
+    bottom: 6px;
+    border: 1px solid rgba(194, 157, 89, 0.45);
+    pointer-events: none;
+}
+
+.cover-kicker {
+    font-family: var(--font-cover);
+    font-size: 11px;
+    letter-spacing: 3.5px;
+    color: #d1b47c;
+    margin-bottom: 24px;
+}
+
+.cover-title {
+    font-family: var(--font-cover);
+    font-size: 27px;
+    letter-spacing: 3px;
+    color: #f7e7c4;
+    line-height: 1.35;
+    margin-bottom: 18px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.cover-divider {
+    color: #c29d59;
+    letter-spacing: 8px;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.cover-subtitle {
+    font-size: 13.5px;
+    font-style: italic;
+    color: #d8c7b0;
+    line-height: 1.6;
+    max-width: 80%;
+    margin-bottom: 35px;
+}
+
+.cover-author {
+    font-family: var(--font-cover);
+    font-size: 13px;
+    letter-spacing: 3px;
+    color: #ebd7b2;
+    text-transform: uppercase;
+    border-top: 1px solid rgba(194, 157, 89, 0.5);
+    padding-top: 14px;
+    width: 70%;
+}
+
+/* Cover Belakang */
+.back-cover-design {
+    padding: 35px !important;
+    background: linear-gradient(135deg, #1b263b 0%, #0d1b2a 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #e0d0b8;
+}
+
+.back-cover-inner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    border: 1px solid rgba(194, 157, 89, 0.3);
+    padding: 30px 20px;
+}
+
+.back-quote {
+    font-style: italic;
+    font-size: 15px;
+    line-height: 1.8;
+    color: #f1e3ce;
+    margin-top: 30px;
+}
+
+.back-meta {
+    font-size: 12px;
+    color: #bfb29f;
+    line-height: 1.6;
+}
+
+.barcode {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.barcode-lines {
+    width: 160px;
+    height: 40px;
+    background: repeating-linear-gradient(
+        90deg,
+        #f1e3ce 0px,
+        #f1e3ce 2px,
+        transparent 2px,
+        transparent 4px,
+        #f1e3ce 4px,
+        #f1e3ce 7px,
+        transparent 7px,
+        transparent 9px
+    );
+}
+
+.barcode span {
+    font-family: monospace;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+}
+
+/* --------------------------------------------------------------------------
+   Bottom Control Bar (FlipHTML5 Sleek Player Bar)
+   -------------------------------------------------------------------------- */
+.bottom-bar {
+    height: 60px;
+    background: rgba(22, 22, 28, 0.85);
+    backdrop-filter: blur(16px);
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 28px;
+    z-index: 15;
+    color: #f0f0f5;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.page-indicator {
+    font-family: monospace;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    min-width: 110px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #e5e5ed;
+}
+
+.separator {
+    color: #8c8c9e;
+}
+
+.slider-wrapper {
+    flex: 1;
+    max-width: 500px;
+    margin: 0 24px;
+    display: flex;
+    align-items: center;
+}
+
+#page-slider {
+    width: 100%;
+    height: 6px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.2);
+    outline: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+#page-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #ffffff;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+#page-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.3);
+    background: #4cc9f0;
+}
+
+.control-tools {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.tool-btn {
+    background: transparent;
+    border: none;
+    color: #d1d1db;
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.tool-btn .app-icon {
+    width: 19px;
+    height: 19px;
+    color: inherit;
+}
+
+.tool-btn:hover {
+    background: rgba(255, 255, 255, 0.16);
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+.tool-btn:hover .app-icon {
+    transform: scale(1.12);
+}
+
+.tool-btn.active {
+    color: #4cc9f0;
+}
+
+.tool-btn.active .app-icon {
+    stroke: #4cc9f0;
+}
+
+#btn-music.active {
+    color: #ff8fab;
+}
+
+#btn-music.active .app-icon {
+    stroke: #ff8fab;
+    animation: music-bounce 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes music-bounce {
+    0% { transform: scale(1) rotate(0deg); }
+    100% { transform: scale(1.15) rotate(6deg); }
+}
+
+.tool-separator {
+    width: 1px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.15);
+    margin: 0 4px;
+}
+
+/* --------------------------------------------------------------------------
+   Modal Daftar Isi (TOC Overlay)
+   -------------------------------------------------------------------------- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-card {
+    background: #fdfbf7;
+    width: 90%;
+    max-width: 440px;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+    overflow: hidden;
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+}
+
+.modal-overlay.active .modal-card {
+    transform: translateY(0);
+}
+
+.modal-header {
+    padding: 16px 20px;
+    background: #efe8db;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #dfd5c5;
+}
+
+.modal-title-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.modal-title-group .app-icon {
+    width: 20px;
+    height: 20px;
+    color: #5d4a36;
+}
+
+.modal-header h3 {
+    font-family: var(--font-heading);
+    font-size: 18px;
+    color: #383027;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: #706456;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.close-btn .app-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.close-btn:hover {
+    background: rgba(0, 0, 0, 0.08);
+    color: #1a1510;
+    transform: scale(1.1);
+}
+
+.modal-body {
+    padding: 16px 20px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.toc-jump-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.toc-jump-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 14px;
+    background: #f7f3ec;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: #3d352b;
+}
+
+.toc-jump-list li:hover {
+    background: #e8dece;
+    color: #1a1510;
+    transform: translateX(4px);
+}
+
+.badge {
+    font-size: 11px;
+    background: #dfd4c2;
+    padding: 3px 8px;
+    border-radius: 10px;
+    color: #594d3f;
+    font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Design
+   -------------------------------------------------------------------------- */
+@media (max-width: 960px) {
+    :root {
+        --book-width: 360px;
+        --book-height: 520px;
+    }
+
+    .page-content {
+        padding: 24px 28px;
+    }
+
+    .page-body {
+        font-size: 13px;
+        line-height: 1.65;
+    }
+
+    .nav-arrow {
+        width: 38px;
+        height: 56px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-arrow {
+        display: none;
+    }
+
+    .slider-wrapper {
+        margin: 0 10px;
+    }
+
+    .brand-title {
+        display: none;
+    }
+}
